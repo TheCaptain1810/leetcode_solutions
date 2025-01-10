@@ -32,5 +32,5 @@ function wordSubsets(words1: string[], words2: string[]): string[] {
         }
     }
 
-    return universalStrings;
+    return universalStrings; 
 };
