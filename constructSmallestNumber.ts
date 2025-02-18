@@ -41,3 +41,19 @@ function smallestNumber(pattern: string): string {
     backtrack(0);
     return num;
 };
+
+// This solution is crazy good!
+function smallestNumber(pattern: string): string {
+    const stack: number[] = [];
+    const res: string[] = [];
+
+    for (let i = 0; i <= pattern.length; i++) {
+        stack.push(i + 1);
+
+        while (stack.length > 0 && (i === pattern.length || pattern[i] === "I")) {
+            res.push(String(stack.pop()));
+        }
+    }
+
+    return res.join("");
+};
