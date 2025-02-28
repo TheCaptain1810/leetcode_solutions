@@ -50,3 +50,47 @@ var shortestCommonSupersequence = function (str1, str2) {
 
   return result;
 };
+
+// Backtracking solution with memoization, barely works but easy to understand
+/**
+ * @param {string} str1
+ * @param {string} str2
+ * @return {string}
+ */
+/*
+var shortestCommonSupersequence = function(str1, str2) {
+  const m = str1.length;
+  const n = str2.length;
+  const cache = new Map();
+
+  function backtrack(i, j) {
+      if (cache.has(`${i}, ${j}`)) {
+          return cache.get(`${i}, ${j}`);
+      }
+
+      if (i === m) {
+          return str2.slice(j);
+      }
+      if (j === n) {
+          return str1.slice(i);
+      }
+
+      if (str1[i] === str2[j]) {
+          return str1[i] + backtrack(i + 1, j + 1);
+      }
+
+      let res1 = str1[i] + backtrack(i + 1, j);
+      let res2 = str2[j] + backtrack(i, j + 1);
+
+      if (res1.length < res2.length) {
+          cache.set(`${i}, ${j}`, res1);
+          return res1;
+      } else {
+          cache.set(`${i}, ${j}`, res2);
+          return res2;
+      }
+  }
+
+  return backtrack(0, 0);
+};
+*/
