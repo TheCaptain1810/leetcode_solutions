@@ -36,3 +36,24 @@ var closestPrimes = function (left, right) {
 
   return res;
 };
+
+/*
+function getPrimesInRange(left, right) {
+    const sieve = new Array(right + 1).fill(true);
+    sieve[0] = sieve[1] = false;
+    
+    for (let i = 2; i * i <= right; i++) {
+        if (sieve[i]) {
+            for (let j = i * i; j <= right; j += i) {
+                sieve[j] = false;
+            }
+        }
+    }
+    
+    const primes = [];
+    for (let i = Math.max(2, left); i <= right; i++) {
+        if (sieve[i]) primes.push(i);
+    }
+    return primes;
+}
+*/
