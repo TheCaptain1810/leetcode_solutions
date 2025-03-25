@@ -23,7 +23,7 @@ var checkValidCuts = function (n, rectangles) {
       if (prevEnd <= start) {
         count++;
       }
-      prevEnd = end;
+      prevEnd = Math.max(prevEnd, end);
     }
 
     return count;
